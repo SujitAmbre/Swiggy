@@ -1,0 +1,68 @@
+/* Style for the search box container */
+.search-box {
+    position: relative;
+    display: inline-block;
+    width: 50%;
+}
+
+/* Style for the input element */
+.search-box input[type="text"] {
+    padding-right: 30px; /* Space for the icon */
+    width: 100%; /* Adjust width as needed */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 16px;
+}
+
+/* Style for the icon */
+.search-box i {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    color: #888;
+}
+
+/* Style for the icon (FontAwesome used in this example) */
+.search-box i.bi {
+    font-size: 18px;
+}
+.searchFirstColImg img {
+    width: 81px;
+}
+
+.searchFirstColImg img {
+    width: 81px;
+}
+
+.searchResultMainRow {
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    width: 46%;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.resultFood {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 74%;
+    margin: 0 auto;
+    margin-top: 15px;
+}
+
+.searchFirstColImg {
+    width: 117px;
+    text-align: center;
+}
+
+.searchFirstColImg img {
+    text-align: left;
+    display: block;
+}
+
+.searchSecondCol {width: 513px;text-align: left;}
