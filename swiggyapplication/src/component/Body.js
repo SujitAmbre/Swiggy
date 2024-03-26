@@ -1,7 +1,9 @@
+import HomePage from "./HomePage";
+import './custom.css';
 const Body = () => {
     return(
         <>
-            <h1>body Component</h1>
+            <HomePage />
         </>
     )
 }
