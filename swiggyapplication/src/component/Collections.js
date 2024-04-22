@@ -79,7 +79,35 @@ const Collections = () => {
     }
     //console.log(restaurant);
     const handleFilterData = () => {
-      // console.log(childData)
+         //const searchV = 4.2;
+        
+         const filterData = filterrestaurant.filter((item) => {
+            const cardInfo = item?.card?.card?.info;
+            if (cardInfo) {
+                if (childData.deliveryTimeValue === "Less than 30 mins") {
+                    return cardInfo?.sla?.deliveryTime < 30;
+                } else if(childData.costForTwoValue === "Rs. 300-Rs. 600") {
+                  const costForTwo = parseInt(cardInfo?.costForTwo.match(/\d+/)[0]);
+                    return costForTwo >= 300 && costForTwo <= 600;
+                }
+                else if(childData.costForTwoValue === "Less than Rs. 300") {
+                  const costForTwo = parseInt(cardInfo?.costForTwo.match(/\d+/)[0]);
+                    return costForTwo < 300;
+                }
+                else if(childData.costForTwoValue === "Greater than Rs. 600") {
+                    const costForTwo = parseInt(cardInfo?.costForTwo.match(/\d+/)[0]);
+                    return costForTwo > 600;
+                }
+                 else if(childData.deliveryTimeValue > 30) {
+                    return cardInfo?.sla?.deliveryTime > 31;
+                }
+
+            }
+            return false; // or true, depending on your needs if cardInfo is not present
+        });
+      setRestaurant(filterData);
+    //  console.log(filterData);
+     // console.log(childData);
     }
     return(
       

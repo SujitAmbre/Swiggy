@@ -1,7 +1,9 @@
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 
 const Header = () => {
+  const cardData = useSelector((store)=>store.cartData);
     return (
         <>
             <nav className="navbar navbar-expand-lg navbar-light bg-white">
@@ -24,9 +26,9 @@ const Header = () => {
               <svg class="_1GTCc _2MSid" viewBox="-1 0 37 32" height="20" width="20" fill="#686b78">
                 <path d="M4.438 0l-2.598 5.11-1.84 26.124h34.909l-1.906-26.124-2.597-5.11z"></path>
               </svg>
-              <span class="_2vS77">0</span>
+              <span class="_2vS77">{cardData?.cartData.length > 0 ? cardData?.cartData.length : "0"}</span>
             </span>
-            <span>Cart</span>
+            <span><Link to="/cart">Cart</Link> </span>
           </a>
         </div>
       </div>

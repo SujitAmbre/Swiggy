@@ -23437,4 +23437,40 @@ img[src^="https://maps.gstatic.com/mapfiles/api-3/images/google_white5_hdpi.png"
   color: #fff;
   margin-left: 15px;
   font-size: 18px;}
+  .restaurantCardMain {
+    text-align: left;
+}
+.restaurantCardMain p:not(.restaurantCardMain p:last-child) {font-weight: bold;display: flex;align-items: center;}
+.restaurantImg {
+  min-height: 196px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+.addonROw {
+  margin-bottom: 4px;
+  padding-top: 0;
+  display: flex;
+  justify-content: space-between;
+}
+button.addToCartAddon.btn.btn-primary {
+    padding: 5px 40px;
+}
+button.addToCartAddon {
+  position: absolute;
+  bottom: 0;
+}
+.innerVaration {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+h1.addonHeading {
+  font-size: 22px;
+}
+.form-check-input[type=radio] {
+  border-radius: 50%;
+  border-color: #000;
+  border-style: solid;
+}
 /*# sourceMappingURL=styles.04c8ec5db5aa2e1d51a55d20e426aae4.css.map*/
