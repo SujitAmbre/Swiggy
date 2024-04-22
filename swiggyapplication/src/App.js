@@ -6,6 +6,8 @@ import Search from './component/Search';
 import { Provider } from 'react-redux';
 import appStore from './redux/appStore';
 import Collections from './component/Collections';
+import RestaurantDetail from './component/RestaurantDetail';
+import Cart from './component/Cart';
 function App() {
   const  router = createBrowserRouter([
     {
@@ -19,6 +21,14 @@ function App() {
     {
       path:'/collections/:collectionId',
       element:<Collections />
+    },
+    {
+      path:'/restaurants/:restaurantId',
+      element:<RestaurantDetail />
+    },
+    {
+      path:'/cart',
+      element: <Cart />
     }
   ])
   return (
