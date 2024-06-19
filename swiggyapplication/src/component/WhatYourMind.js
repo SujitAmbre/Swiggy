@@ -5,17 +5,28 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 const WhatYourMind = ({data}) => {
-
+const selectedLang = useSelector((store)=>store?.currentLangName?.currentLang);
   
-
+console.log(selectedLang)
     if(data === null){ return; }
+    let title;
+    if(selectedLang === "marathi") {
+      title = "तुमच्या मनात काय आहे?";
+    } else if(selectedLang==="hindi") {
+      title = "आपके दिमाग में क्या है?";
+    } else {
+      title = "Whats on your mind?";
+    }
     return(
         <>
   <div className='container'>
 
 <div className='row'>
-      <h2 className='sc-aXZVg bwoZPF title '>What's on your mind?</h2>
+      <h2 className='sc-aXZVg bwoZPF title '>{
+        title
+      }</h2>
 </div>
   <Swiper
         modules={[Navigation, Pagination]}
