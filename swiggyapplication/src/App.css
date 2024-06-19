@@ -413,9 +413,6 @@ button,input,optgroup,select,textarea {
   color: inherit;
   font: inherit;
   margin: 0;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none
 }
 
 button {
@@ -23472,5 +23469,24 @@ h1.addonHeading {
   border-radius: 50%;
   border-color: #000;
   border-style: solid;
+}
+.recipeParent {
+  display: flex;
+  width: 80%;
+  margin: 0 auto;
+  align-items: stretch;
+  text-align: left;
+  column-gap: 50px;
+  
+}
+.recipeThumb {
+  min-height: 600px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 500px;
+  background-position: center;
+}
+.recipeImageCol {
+  width: 50%;
 }
 /*# sourceMappingURL=styles.04c8ec5db5aa2e1d51a55d20e426aae4.css.map*/

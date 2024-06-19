@@ -8,6 +8,9 @@ import appStore from './redux/appStore';
 import Collections from './component/Collections';
 import RestaurantDetail from './component/RestaurantDetail';
 import Cart from './component/Cart';
+import OfferceNearMe from './component/OfferceNearMe';
+import Meal from './component/Meal';
+import Recipe from './component/Recipe';
 function App() {
   const  router = createBrowserRouter([
     {
@@ -29,6 +32,18 @@ function App() {
     {
       path:'/cart',
       element: <Cart />
+    },
+    {
+      path:'/offers-near-me',
+      element:<OfferceNearMe />
+    },
+    {
+      path:'/meal',
+      element:<Meal />
+    },
+    {
+      path:'/recipe/:id',
+      element:<Recipe />
     }
   ])
   return (
