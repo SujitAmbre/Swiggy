@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import AddonAccordian from "./AddonAccordian";
 import Header from "./Header";
+import RestaurantAccordian from "./RestaurantAccordian";
 
 const RestaurantDetail = ()=> {
     const {restaurantId} = useParams();
@@ -71,7 +72,8 @@ const RestaurantDetail = ()=> {
                         }
                     </div>
                     <div className="row">
-                            <AddonAccordian addonData={restaurantDetailArray?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards}  />
+                        <RestaurantAccordian key="test" addonData={restaurantDetailArray?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards} />
+                            {/* <AddonAccordian addonData={restaurantDetailArray?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards}  /> */}
                     </div>
                 </div>
             </div>
