@@ -8,6 +8,7 @@ const Meal = ()=> {
     const [categoryData, setCategroyData] = useState();
     const [categoryDatafilter, setCategroyDataFilter] = useState();
     const [selectedCategory, setSelectedCategory] = useState();
+    const [selectedMultipleCategory, setSelectedMultipleCategory] = useState([]);
     const [area, setArea] = useState();
     const searchMealEvt =  async ()=>{
         try {
@@ -23,21 +24,19 @@ const Meal = ()=> {
         }
        
     }
-    console.log(searchMeal)
-//   const selectCategoryEvt =(e)=>{
-//     debugger
-//     const categoryDatafilter1 = categoryDatafilter.filter((i)=>{
-//         return i.strCategory === e.target.value;
-//     })
-//     setCategroyData(categoryDatafilter1);
+    const handleCheckboxChange  =(e)=>{
+        debugger
+        setSelectedMultipleCategory([...selectedMultipleCategory, e.target.value])
+    }
 
-//   }
+
 useEffect(()=>{
     const categoryDatafilter1 = categoryDatafilter?.filter((i)=>{
-                return i.strCategory === selectedCategory && i.strArea===area;
+                return (i.strCategory === selectedCategory && i.strArea===area) || (selectedMultipleCategory.includes(i.strCategory));
             })
             setCategroyData(categoryDatafilter1);
-},[selectedCategory, area])
+},[selectedCategory, area]);
+console.log(selectedMultipleCategory)
     return(
         <>
         <Header />
@@ -47,6 +46,18 @@ useEffect(()=>{
             </div>
             <div className="row">
                 <div className="col-lg-3">
+                <h3>Category Multiple</h3>
+                {storeMealData?.meals ? 
+                    storeMealData && storeMealData?.meals?.map((i)=>{
+                        return(
+                            <div className="col-lg-12" key={i.idMeal}>
+                                  <input type="checkbox" onChange={handleCheckboxChange} name="strMultipleCategory" value={i.strCategory} style={{width:'15px',height:'15px',verticalAlign: 'middle',border:'1px solid' }} />{i.strCategory}<br/>
+                            </div>
+                        )
+                    }) 
+                    : null 
+                   
+                }
                     <h3>Category</h3>
                 {storeMealData?.meals ? 
                     storeMealData && storeMealData?.meals?.map((i)=>{
